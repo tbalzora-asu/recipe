@@ -21,7 +21,7 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, 
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
-time, mark, audio, video {;
+time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -54,6 +54,174 @@ table {
 }
 
 /* -------------------- ROOT VARIABLES --------------------------------------- */
+:root {
+  --clr-black: #0D0D0D;
+  --clr-light: #F2F2F2;
+  --clr-teal: #7ABFBF;
+  --clr-teal-trans: rgba(122, 191, 191, 0.5);
+  --clr-orange: #EB5428;
+
+  /* Typography sizes */
+  --font-bebas: 'Bebas Neue', cursive;
+  --font-montserrat: 'Montserrat', sans-serif;
+
+  --fz-h1: 40px;
+  --fz-h2: 30px;
+  --fz-h3: 25px;
+  --fz-nav: 20px;
+  --fz-body: 16px;
+}
+
+/* -------------------- GLOBAL STYLES (mobile first/small) -------------------- */
+html {
+  font-family: var(--font-montserrat);
+  font-size: 100%;
+  color: var(--clr-black);
+  background-color: #fff;
+  scroll-behavior: smooth;
+}
+
+body {
+  line-height: 1.5;
+  min-width: 320px; /* ensure mobile min width */
+}
+
+/* Visually hidden class for styling */
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px,1px,1px,1px);
+}
+
+/* Headings */
+h1, h2, h3 {
+  font-family: var(--font-bebas);
+  color: var(--clr-black);
+  margin-bottom: 0.5rem;
+}
+
+h1 {
+  font-size: var(--fz-h1);
+}
+
+h2 {
+  font-size: var(--fz-h2);
+}
+
+h3 {
+  font-size: var(--fz-h3);
+}
+
+/* Paragraphs */
+p, li, dd, input, label, button {
+  font-family: var(--font-montserrat);
+  font-size: var(--fz-body);
+  color: var(--clr-black);
+  line-height: 1.4;
+}
+
+/* NAV */
+nav {
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0px 3px 3px #bbb;
+  position: fixed;
+  top: 0;
+  z-index: 5;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  max-height: 0; 
+  transition: max-height 0.4s ease;
+}
+
+nav label {
+  cursor: pointer;
+  display: inline-block;
+  user-select: none;
+  position: relative;
+  bottom: 5px;
+  left: 20px;
+}
+
+nav label svg {
+  display: block;
+}
+
+nav span {
+  display: inline-block;
+  font-family: var(--font-bebas);
+  font-size: var(--fz-nav);
+  color: var(--clr-orange);
+}
+
+nav input {
+  display: none;
+}
+
+nav input:checked ~ ul {
+  max-height: 500px; /* expand for mobile menu */
+}
+
+/* Navigation LI */
+nav li {
+  border-bottom: 1px solid #ddd;
+}
+
+nav li a {
+  display: block;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  font-family: var(--font-bebas);
+  font-size: var(--fz-nav);
+  color: var(--clr-black);
+}
+
+nav li a img {
+  display: none; /* hidden in mobile, show in bigger screens */
+  width: 24px;
+  height: auto;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+#logo svg {
+  height: 40px;
+  width: auto;
+}
+
+#sign-in span {
+  margin-left: 0.5rem;
+}
+
+/* Search form */
+#site-search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3.5rem; /* push below nav if fixed nav */
+  padding: 0.5rem;
+}
+
+#site-search input[type="search"] {
+  width: 60%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+}
+
+#site-search button {
+  background-color: var(--clr-light);
+  border: 1px solid #ccc;
+  border-left: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
 
 /* MAIN LAYOUT */
 main {
@@ -62,19 +230,187 @@ main {
   padding: 1rem;
 }
 
+article {
+  margin-bottom: 2rem;
+}
+
+.recipe-image {
+  max-width: 100%;
+  height: auto;
+  margin: 1rem 0;
+}
+
+.action-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.action-buttons button, 
+.action-buttons a.jump {
+  display: inline-flex;
+  align-items: center;
+  border: none;
+  background: #fff;
+  color: var(--clr-black);
+  cursor: pointer;
+  font-family: var(--font-montserrat);
+  font-size: var(--fz-body);
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border: 1px solid var(--clr-orange);
+  border-radius: 4px;
+  gap: 0.3rem;
+}
+
+.action-buttons button:hover,
+.action-buttons a.jump:hover {
+  background-color: var(--clr-teal-trans);
+}
+
+/* DETAILS (dl/dt/dd) */
+dl {
+  margin-bottom: 1rem;
+}
+dt {
+  font-weight: bold;
+  font-family: var(--font-montserrat);
+  margin-top: 0.5rem;
+}
+dd {
+  margin-bottom: 0.5rem;
+}
+aside {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #fff; 
+}
+
+aside h2 {
+  margin-bottom: 1rem;
+}
+
+aside section {
+  margin-bottom: 2rem;
+}
+
+aside img {
+  width: 100px;
+  height: auto;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+aside .rating {
+  margin-top: 0.5rem;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: var(--clr-light);
+  margin-top: 2rem;
+}
+
+footer .social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+footer p {
+  margin-bottom: 0.5rem;
+}
 
 /* -------------------- MEDIA QUERY (medium) --------------------------------*/
 @media screen and (min-width: 768px) {
- 
-  
+  nav li a img {
+    display: inline-block;
+  }
+
+
+  header {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #site-search {
+    justify-content: flex-end;
+    margin-top: 0.5rem;
+    padding: 0.5rem 2rem;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 5rem; 
+  }
 }
 
 /*-------------------- MEDIA QUERY (large) ------------------------------------*/
 @media screen and (min-width: 1024px) {
+  header {
+    background-color: var(--clr-light);
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 2rem;
+  }
+  .container {
+    max-width: 1200px; 
+  }
+  nav {
+    position: static;
+    box-shadow: none;
+    background-color: var(--clr-light);
+  }
+  nav ul {
+    max-height: none;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  nav label {
+    display: none;
+  }
 
+  #site-search {
+    margin-top: 0;
+    flex: 1;
+    justify-content: flex-end;
+  }
+  main {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 6rem auto 2rem auto;
+  }
+
+  article {
+    flex: 2;
+    margin-right: 2rem;
+  }
+
+  aside {
+    flex: 1;
+    background-color: var(--clr-teal); 
+    padding: 1.5rem;
+    border-radius: 4px;
+  }
+  aside section {
+    background-color: transparent;
+    margin-bottom: 2rem;
+  }
 }
 
 /*-------------------- MEDIA QUERY (xl) ---------------------------------------*/
 @media screen and (min-width: 1280px) {
-
+  main {
+    max-width: 1400px;
+  }
 }
