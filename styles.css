@@ -179,7 +179,6 @@ nav li a img { display: none; }
 /* Logo */
 #logo {
   background-color: var(--orange);
-  padding: 0.25rem;
   border-radius: 4px;
 }
 
