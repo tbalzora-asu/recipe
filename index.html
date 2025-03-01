@@ -13,24 +13,27 @@
 <body>
   <header>
     <h1 class="visually-hidden">Good Eats</h1>
-        <!-- Search Form -->
-        <form role="search" id="site-search">
-          <label for="search-input" class="visually-hidden">Search</label>
-          <input type="search" id="search-input" name="q" placeholder="Search for recipes...">
-          <button type="submit">
-            <!-- Search SVG -->
-            <svg xmlns="http://www.w3.org/2000/svg"
-                 class="icon icon-tabler icon-tabler-search"
-                 width="25" height="25" viewBox="0 0 24 24"
-                 stroke-width="1.5" stroke="#EB5428" fill="none"
-                 stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="10" cy="10" r="7" />
-              <line x1="21" y1="21" x2="15" y2="15" />
-            </svg>
-            <span class="visually-hidden">Search</span>
-          </button>
-        </form>
-      </header>
+  </header>
+
+      <h1 class="visually-hidden">Good Eats</h1>
+      <!-- Search Form -->
+      <form role="search" id="site-search">
+        <label for="search-input" class="visually-hidden">Search</label>
+        <input type="search" id="search-input" name="q" placeholder="Search for recipes...">
+        <button type="submit">
+          <!-- Search SVG -->
+          <svg xmlns="http://www.w3.org/2000/svg"
+               class="icon icon-tabler icon-tabler-search"
+               width="25" height="25" viewBox="0 0 24 24"
+               stroke-width="1.5" stroke="#fff" fill="none"
+               stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="10" cy="10" r="7" />
+            <line x1="21" y1="21" x2="15" y2="15" />
+          </svg>
+          <span class="visually-hidden">Search</span>
+        </button>
+      </form>
+
     <nav>
       <h2 class="visually-hidden">Main Navigation</h2>
       <!-- “Hamburger” for mobile -->
@@ -136,7 +139,7 @@
           </button>
 
           <!-- Print Button -->
-          <button>
+          <button onclick="window.print()">
             <svg xmlns="http://www.w3.org/2000/svg"
                  class="icon icon-tabler icon-tabler-printer"
                  width="40" height="40" viewBox="0 0 24 24"

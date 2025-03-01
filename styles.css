@@ -119,9 +119,7 @@ header {
   right: 0;
   width: 100%;
   box-sizing: border-box; 
-  background-color: var(--white);
   padding: 0.5rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   z-index: 10;
 }
 nav {
@@ -178,7 +176,6 @@ nav li a img { display: none; }
 /* Logo */
 #logo {
   background-color: var(--orange);
-  border-radius: 4px;
 }
 
 /* Sign In link */
@@ -193,13 +190,13 @@ nav li a img { display: none; }
 
 /* SEARCH BAR */
 #site-search {
-  margin-top: 3.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 90%;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 1rem;
 }
 #site-search input[type="search"] {
   width: 60%;
@@ -214,7 +211,6 @@ nav li a img { display: none; }
   border: 2px solid var(--orange);
   border-left: none;
   color: var(--white);
-  padding: 0.4rem 1rem;
   cursor: pointer;
   border-radius: 0 4px 4px 0;
 }
@@ -253,6 +249,9 @@ article h2 {
   flex-wrap: wrap;
   gap: 0.5rem;
   margin: 1rem 0;
+}
+.action-buttons button{
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .action-buttons button,
 .action-buttons a.jump {
@@ -339,7 +338,6 @@ article h2 {
   gap: 1rem;
 }
 .side-dishes section {
-  background-color: var(--white);
   border-radius: 4px;
   padding: 1rem;
   text-align: center;
@@ -420,7 +418,9 @@ footer {
     display: inline-block;
     background-color: var(--orange);
     padding: 0.25rem;
-    border-radius: 4px;
+  }
+  .side-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
   nav label { display: none; }
   nav ul {
@@ -518,6 +518,37 @@ footer {
   /*do the side grid thing in large*/
   .side-grid {
     grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+@media print {
+  /* 1) 0.5 inch margins */
+  @page {
+    margin: 0.5in;
+  }
+
+  /*  Use a serif font */
+  body, * {
+    font-family: serif !important;
+  }
+
+  /* Hide images */
+  img {
+    display: none !important;
+  }
+
+  /*  Do not display the nav */
+  nav {
+    display: none !important;
+  }
+
+  /* full URLs after hyperlinks */
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  /*Limit print to 1 page*/
+  html, body {
+    max-height: 100vh;
   }
 }
 
