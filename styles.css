@@ -333,6 +333,7 @@ article h2 {
   text-align: center;
 }
 .side-grid {
+  width: 50%;
   display: grid;
   grid-template-columns: 1fr; 
   gap: 1rem;
@@ -344,7 +345,7 @@ article h2 {
   text-align: center;
 }
 .side-dishes section img {
-  width: 100%;
+  width: 50%;
   height: auto;
   margin-bottom: 0.5rem;
   border-radius: 4px;
@@ -506,5 +507,9 @@ footer {
   }
   .intro-section {
     grid-template-columns: 200px auto 350px;
+  }
+  /*do the side grid thing in large*/
+  .side-grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
