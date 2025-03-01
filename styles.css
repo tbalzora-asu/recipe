@@ -131,7 +131,10 @@ nav {
 }
 
 /* Hamburger toggle for mobile */
-nav input { display: none; }
+nav input { 
+  display: none; 
+}
+/*top header menu*/
 nav label {
   display: inline-flex;
   align-items: center;
@@ -416,6 +419,12 @@ footer {
   body {
     max-width: 620px;
   }
+  #logo {
+    display: inline-block;
+    background-color: var(--orange);
+    padding: 0.25rem;
+    border-radius: 4px;
+  }
   nav label { display: none; }
   nav ul {
     display: flex;
@@ -429,7 +438,7 @@ footer {
   }
   nav li a {
     padding: 0.75rem 1rem;
-    text-align: left;
+    text-align: center;
   }
   nav li a img {
     display: inline-block;
@@ -445,7 +454,7 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    text-align: left;
+    text-align: center;
     padding: 1rem 2rem;
   }
   .footer-container {
@@ -513,3 +522,4 @@ footer {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
+
