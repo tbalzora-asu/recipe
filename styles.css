@@ -54,7 +54,7 @@ table {
 :root {
   --black: #0D0D0D;
   --white: #FFFFFF;
-  --whiteish: #F2F2F2;
+  --off-white: #F2F2F2;
   --teal: #7ABFBF;
   --teal-fade: rgba(122, 191, 191, 0.5);
   --orange: #EB5428;
@@ -76,7 +76,7 @@ body {
   width: 100%;
   max-width: 414px;
   margin: 0 auto;
-  background-color: var(--whiteish);
+  background-color: var(--off-white);
   font-family: var(--font-montserrat);
   font-size: var(--fz-body);
   line-height: 1.4;
@@ -264,7 +264,8 @@ article h2 {
   background: var(--white);
   color: var(--black);
   cursor: pointer;
-  padding: 0.5rem 1rem;
+  padding: 1rem; /*make the action buttons look better*/
+  justify-content: space-between;
   border-radius: 4px;
   font-family: var(--font-montserrat);
   transition: background-color 0.2s;
