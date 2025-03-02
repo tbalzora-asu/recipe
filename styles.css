@@ -528,26 +528,54 @@ footer {
 
   /*  Use a serif font */
   body, * {
-    font-family: serif !important;
+    font-family: Georgia, serif; /*found serif font to try*/
   }
 
-  /* Hide images */
+  /* Hide images  and also other unnecessary elements */
   img {
-    display: none !important;
+    display: none;
   }
-
-  /*  Do not display the nav */
-  nav {
-    display: none !important;
+  .action-buttons button, .action-buttons a.jump {
+    display: none;
   }
-
+  #site-search {
+    display: none;
+  }
+  .recipe-image{
+    display: none;
+  }
+  header, footer, nav, aside, .sidebar, .ads, .extra-content {
+    display: none;
+  }
+  /* Display recipe */
+  .recipe-container {
+    display: block;
+  }
+ .recipe-text
+ {
+  display: flex;
+  gap: 20px; 
+}
   /* full URLs after hyperlinks */
   a[href]:after {
     content: " (" attr(href) ")";
   }
+  /* Font Size Adjusters for content */
+    h1 {
+      font-size: 18pt;
+    }
+    
+    h2, h3 {
+      font-size: 12pt;
+    }
+  
+    p, li {
+      font-size: 8pt; /*(limits to a page for now if I go small enough) looking for way to condense margins */
+    }
 
   /*Limit print to 1 page*/
-  html, body {
-    max-height: 100vh;
+  @page {
+    size: A4; 
+    margin: 1in; 
   }
 }
