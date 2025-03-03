@@ -539,7 +539,7 @@ main {
 footer {
   order: 6;
 }
-/* ------------ SECOND MOBILE FOR CENTERING LOGO (below 620px) ------------ */
+/* ------------ SECOND TABLET FOR SERACH BAR POSITION (620px–950px) ------------ */
 @media screen and (max-width: 619px) {
   nav {
     display: flex;
@@ -550,16 +550,16 @@ footer {
   }
   /* pin hamburger left and #sign-in right? */
   nav label {
-    position: relative;
+    position: absolute;
+    left: 1rem;
   }
   #sign-in {
-    position: relative;
+    position: absolute;
+    right: 1rem;
   }
   #logo {
     z-index: 1;  /* behind hamburger/sign-in if they do collide */
     margin: 0 auto;
-    margin-left: 10rem;
-    margin-right: 10rem;
   }
 }
 
@@ -570,24 +570,24 @@ footer {
   }
   /* Move search bar "up" in order: */
   #site-search {
-    order: 2 !important; 
+    order: 2 ; 
     margin-top: 0; 
   }
   nav {
-    order: 3 !important; 
+    order: 3 ; 
   }
 }
 
 /* ------------ DESKTOP (around >= 950px) ------------ */
 @media screen and (min-width: 950px) {
   nav ul {
-    display: flex !important; 
+    display: flex ; /* or block, depending on your desired style */
   }
   nav {
-    order: 3 !important;
+    order: 3 ;
   }
   #site-search {
-    order: 4 !important;
+    order: 4 ;
   }
 }
 @media print {
