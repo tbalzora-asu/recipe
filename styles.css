@@ -82,6 +82,9 @@ body {
   line-height: 1.4;
   color: var(--black);
   padding-top: 3.5rem; 
+  display: flex;
+  flex-direction: column;
+
 }
 
 /* Headings */
@@ -518,6 +521,73 @@ footer {
   /*do the side grid thing in large*/
   .side-grid {
     grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+h1.visually-hidden:nth-of-type(2) {
+  display: none;
+  order: 2;
+}
+nav {
+  order: 3;
+}
+#site-search {
+  order: 4;
+}
+main {
+  order: 5;
+}
+footer {
+  order: 6;
+}
+/* ------------ SECOND MOBILE FOR CENTERING LOGO (below 620px) ------------ */
+@media screen and (max-width: 619px) {
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    
+  }
+  /* pin hamburger left and #sign-in right? */
+  nav label {
+    position: relative;
+  }
+  #sign-in {
+    position: relative;
+  }
+  #logo {
+    z-index: 1;  /* behind hamburger/sign-in if they do collide */
+    margin: 0 auto;
+    margin-left: 10rem;
+    margin-right: 10rem;
+  }
+}
+
+/* ------------ SECOND TABLET FOR SERACH BAR POSITION (620px–950px) ------------ */
+@media screen and (min-width: 620px) and (max-width: 950px) {
+  nav ul {
+    display: none; /* Hide the menu */
+  }
+  /* Move search bar "up" in order: */
+  #site-search {
+    order: 2 !important; 
+    margin-top: 0; 
+  }
+  nav {
+    order: 3 !important; 
+  }
+}
+
+/* ------------ DESKTOP (around >= 950px) ------------ */
+@media screen and (min-width: 950px) {
+  nav ul {
+    display: flex !important; 
+  }
+  nav {
+    order: 3 !important;
+  }
+  #site-search {
+    order: 4 !important;
   }
 }
 @media print {
